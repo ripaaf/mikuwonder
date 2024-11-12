@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smooth Entry Animations</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Container styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin: 50px;
+}
+
+/* Element styling */
+.element {
+  width: 80%;
+  max-width: 500px;
+  height: 100px;
+  background-color: #4CAF50;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px); /* Initial position for animation */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+
+.element.visible {
+  opacity: 1;
+  transform: translateY(0); /* Reset to original position */
+}
+
+.hidden {
+  opacity: 0;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Content Sections -->
+  <div class="container">
+    <section class="element hidden">Element 1</section>
+    <section class="element hidden">Element 2</section>
+    <section class="element hidden">Element 3</section>
+    <section class="element hidden">Element 4</section>
+    <section class="element hidden">Element 5</section>
+    <section class="element hidden">Element 1</section>
+    <section class="element hidden">Element 2</section>
+    <section class="element hidden">Element 3</section>
+    <section class="element hidden">Element 4</section>
+    <section class="element hidden">Element 5</section>
+    <section class="element hidden">Element 1</section>
+    <section class="element hidden">Element 2</section>
+    <section class="element hidden">Element 3</section>
+    <section class="element hidden">Element 4</section>
+    <section class="element hidden">Element 5</section>
+    <section class="element hidden">Element 1</section>
+    <section class="element hidden">Element 2</section>
+    <section class="element hidden">Element 3</section>
+    <section class="element hidden">Element 4</section>
+    <section class="element hidden">Element 5</section>
+    <section class="element hidden">Element 1</section>
+    <section class="element hidden">Element 2</section>
+    <section class="element hidden">Element 3</section>
+    <section class="element hidden">Element 4</section>
+    <section class="element hidden">Element 5</section>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Function to observe elements as they enter the viewport
+    const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+        entry.target.classList.add('visible');  // Add animation class
+        observer.unobserve(entry.target);  // Stop observing once element is loaded
+        }
+    });
+    }, {
+    threshold: 0.1  // Trigger when 10% of the element is visible
+    });
+
+    // Select all elements to animate and observe each one
+    document.querySelectorAll('.element').forEach(element => {
+    observer.observe(element);
+    });
+
+  </script>
+</body>
+</html>
