@@ -1,2 +1,2 @@
 # mikuwonder
-a miku website
+a hatsune miku fan website
