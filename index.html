@@ -185,30 +185,25 @@
     </footer>
 
 <script>
-    // Create IntersectionObserver to apply delays individually
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Retrieve the delay for each element from its `data-delay` attribute
                 const delay = parseInt(entry.target.getAttribute('data-delay')) || 0;
 
-                // Apply delay using `setTimeout` for each element independently
                 setTimeout(() => {
                     entry.target.classList.add('visible');  // Make element visible
                 }, delay);
 
-                // Stop observing this element once it becomes visible
                 observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.1  // Trigger when 10% of the element is visible
+        threshold: 0.1
     });
 
-    // Add hidden class to all elements initially
     document.querySelectorAll('.element').forEach(element => {
         element.classList.add('hidden');
-        observer.observe(element);  // Observe each element independently
+        observer.observe(element);
     });
 </script>
 

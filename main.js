@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (targetElement) {
                 targetElement.scrollIntoView({ behavior: 'smooth' });
 
-                // Highlight active navbar link immediately after scroll
                 navLinks.forEach(link => link.classList.remove('active'));
                 link.classList.add('active');
 
@@ -52,9 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     elements.forEach(element => observer.observe(element));
 
-    // Event listeners for scroll and DOMContentLoaded
     window.addEventListener('scroll', onScroll);
-    onScroll(); // Initial call to highlight active section on page load
+    onScroll();
 });
 
 // Toggle navbar menu (hamburger)
@@ -95,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // Always show the navbar when the timer resets
         navbarWrapper.classList.remove('hilang');
 
-        // Clear any existing timeout and start a new one only if we’re scrolled down
         clearTimeout(hideTimeout);
         if (window.scrollY > 0) {
             hideTimeout = setTimeout(hideNavbar, 2000);
@@ -132,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 // Pause before starting to erase
                 isTyping = false;
-                setTimeout(typeEraseEffect, 1000); // Wait time before erasing starts
+                setTimeout(typeEraseEffect, 1000);
                 return;
             }
         } else {
@@ -140,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 element.innerHTML = text.substring(0, index - 1);
                 index--;
             } else {
-                // Reset to start typing again after erasing
+
                 isTyping = true;
             }
         }

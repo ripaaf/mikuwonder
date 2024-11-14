@@ -36,13 +36,13 @@ html{
 
 .element{
     opacity: 0;
-    transform: translateY(20px); /* Initial position for animation */
+    transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }   
 
 .element.visible {
   opacity: 1;
-  transform: translateY(0); /* Reset to original position */
+  transform: translateY(0); 
 }
 
 .hidden {
@@ -50,7 +50,7 @@ html{
 }
 
 .hamburger {
-    display: none; /* Hide by default */
+    display: none;
     flex-direction: column;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -78,7 +78,7 @@ html{
 }
 
 .navbar-wrapper.hilang {
-    transform: translateY(-110px); /* Slide up to hide */
+    transform: translateY(-110px);
 }
 
 .navbar{
@@ -116,7 +116,7 @@ html{
     left: 0;
     bottom: 0; 
     width: 0;
-    height: 2px; /* Set thickness of the underline */
+    height: 2px; 
     background-color: #FFFFFF;
     transition: width 0.3s ease;
 }
@@ -143,13 +143,11 @@ html{
 }
 
 .title-miku p{
-    /* HATSUNE MIKU. */
     font-family: 'Joan';
     font-style: normal;
     font-weight: 400;
     font-size: 46px;
     line-height: 83px;
-    /* identical to box height */
 
     background: linear-gradient(90deg, #26FFED 0%, #538CFF 50.4%, #08F6FF 100%);
     -webkit-background-clip: text;
@@ -198,11 +196,11 @@ html{
     flex-direction: row;
     align-items: flex-start;
     background: 
-        url('assets/svg/line.svg') no-repeat center, /* Image layer centered */
-        linear-gradient(3.66deg, #1F1F1F 10.4%, #262626 34.73%, #262626 79.39%); /* Gradient layer */
+        url('assets/svg/line.svg') no-repeat center, 
+        linear-gradient(3.66deg, #1F1F1F 10.4%, #262626 34.73%, #262626 79.39%);
     
-    background-size: cover, cover; /* Ensures both the image and gradient cover the entire container */
-    background-position: center; /* Centers the background image */
+    background-size: cover, cover; 
+    background-position: center;
     gap: 50px;
     padding-top: 130px;
 }
@@ -313,12 +311,12 @@ color: #cacaca;
 
 @keyframes imageEntrance {
     0% {
-        transform: translateX(-100px); /* Start slightly off-screen above */
-        opacity: 0; /* Start fully transparent */
+        transform: translateX(-100px);
+        opacity: 0;
     }
     100% {
-        transform: translateX(0); /* End in its original position */
-        opacity: 1; /* Fully opaque */
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
@@ -356,7 +354,6 @@ color: #cacaca;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    /* justify-content: space-between; */
     gap: 10px;
     /* margin-top: 60px; */
 }
@@ -372,13 +369,13 @@ color: #cacaca;
     /* animation: float 6s ease-in-out infinite; */
 }
 
-/* Keyframes for floating effect */
+
 @keyframes float {
     0% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px); /* Adjust for desired hover height */
+        transform: translateY(-10px); 
     }
     100% {
         transform: translateY(0);
@@ -415,16 +412,16 @@ color: #cacaca;
     bottom: 0;
     background: url('assets/image/face2.png') no-repeat center;
     background-size: cover;
-    filter: brightness(0.7) blur(5px); /* Initial brightness and blur */
+    filter: brightness(0.7) blur(5px);
     border-radius: 10px;
-    z-index: -1; /* Place the background behind the content */
-    transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    z-index: -1; 
+    transition: filter 0.3s ease, transform 0.3s ease; 
 }
 
-/* Apply hover effect on the parent element */
+
 .history-title:hover::before {
-    filter: brightness(0.7) blur(3px); /* Reduced blur on hover */
-    transform: scale(1.05); /* Slight zoom effect */
+    filter: brightness(0.7) blur(3px);
+    transform: scale(1.05);
 }
 
 
@@ -489,10 +486,10 @@ color: #cacaca;
     bottom: -165px;
     left: -260px;
     color: #9C9C9C;
-    overflow-wrap: break-word; /* Enable word wrapping for small screens */
+    overflow-wrap: break-word; 
     border-right: 0.1em solid #9C9C9C;
     animation: blink-caret 0.75s step-end infinite;
-    max-width: 100%; /* Allow wrapping within the container */
+    max-width: 100%;
     padding-right: 0.1em;
 }
 
@@ -534,7 +531,7 @@ color: #cacaca;
 }
 
 .fade-1 {
-    width: calc(100vw * (1265 / 1480)); /* Assuming 1920px is the original viewport width */
+    width: calc(100vw * (1265 / 1480));
     height: 15px;
     background-color: #262626;
     border-radius: 0px 0px 30px 30px;
@@ -542,7 +539,7 @@ color: #cacaca;
 }
 
 .fade-2 {
-    width: calc(100vw * (1169 / 1480)); /* Assuming 1920px is the original viewport width */
+    width: calc(100vw * (1169 / 1480)); 
     height: 15px;
     background-color: #262626;
     border-radius: 0px 0px 30px 30px;
@@ -580,7 +577,7 @@ color: #262626;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth animation */
+    transition: transform 0.3s ease, filter 0.3s ease; 
 }
 
 .gambar1 { grid-area: image1; background-image: url(assets/image/miku-asc.jpg); }
@@ -774,7 +771,7 @@ color: #262626;
 }
 
 .footer-contact-icon img:hover {
-    transform: scale(1.2); /* Slightly increases the size on hover */
+    transform: scale(1.2); 
 }
 
 
@@ -1071,8 +1068,8 @@ color: #262626;
         align-items: center;
     }
     .home-display {
-        width: calc(100% - 1px); /* Adjust as needed for padding/margin */
-        max-width: 760px; /* Optional: limits width to 600px */
+        width: calc(100% - 1px); 
+        max-width: 760px; 
     }
 
     .footer-image-text img {
@@ -1116,7 +1113,7 @@ color: #262626;
         display: flex; 
         flex-direction: column; 
         position: absolute;
-        top: 108px; /* Position below the navbar */
+        top: 108px;
         left: 0;
         right: 0;
         background: #262626; 
@@ -1125,8 +1122,8 @@ color: #262626;
         height: auto;
         gap: 20px;
         padding: 20px;
-        transition: opacity 0.3s ease, transform 0.3s ease; /* Fade and slide-in effect */
-        pointer-events: none; /* Prevent clicks when hidden */
+        transition: opacity 0.3s ease, transform 0.3s ease; 
+        pointer-events: none; 
     }
 
     .navbar.active {
@@ -1137,7 +1134,7 @@ color: #262626;
         pointer-events: auto;
     }
 
-    /* Animate hamburger lines into an X when active */
+
     .hamburger.active .line:nth-child(1) {
         transform: rotate(50deg) translate(5px, 5px);
     }
@@ -1255,7 +1252,3 @@ color: #262626;
     }
     
 }
-
-
-
-
